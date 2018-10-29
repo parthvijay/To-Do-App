@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from './List';
 import "./ToDo.css";
+import PropTypes from "prop-types";
 
 export class Todo extends Component {
         state = { list: [], itemToAdd: '' };
@@ -47,6 +48,11 @@ export class Todo extends Component {
               <List complete={this.markComplete} listItems={this.state.list} remove={this.deleteItem} />
             </div>;
         }
+      }
+
+      Todo.PropTypes = {
+        list: PropTypes.array,
+        itemToAdd: PropTypes.string
       }
 
 export default Todo;
